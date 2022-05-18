@@ -1,17 +1,24 @@
 import React, { useRef, useState } from 'react';
+import socket from 'socket.io-client';
 
-import { useEffect } from 'react';
-import { useLayoutEffect } from 'react';
+
 import Container from './components/container/container';
 
-
-
-const App = () => {
-  return (
-    <Container/>
-  )
-
-    
+class App extends React.Component {
+  componentDidMount() {
+   
+    const connection = socket(window.location.origin)
+    connection.on('connect',() =>{
+      console.log('connected to server')
+    })
+  }
+  render() {
+    return (
+      <Container/>
+    )
+  
+  }
 }
+
 
 export default App

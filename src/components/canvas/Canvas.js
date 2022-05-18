@@ -2,7 +2,7 @@
 import React, {useState, useRef} from 'react';
 import { useCallback } from 'react';
 import { useEffect } from 'react';
-import io from 'socket.io'
+import io from 'socket.io-client'
 
 // import './style.css'
 //challenges: 1)one big componentdidupdate cycle  that also needs to capture the memoized data of the functions from the mouse movements?(usecallback) need the exact data of your mouse(drawing) and the other users mouse(sockets)
@@ -82,11 +82,11 @@ const CanvasBoard = (props) => {
     drawOnCanvas(evt.pageX,evt.pageY)
   }
 
-\
+
   
     return (
       <div>
-        <canvas ref = {canvasRef} width = {400} height = {400} onMouseDown = {onMouseDown} onMouseUp = {onMouseUp} onMouseMove = {onMouseMove} className='canvas-board' id='canvas-board'>
+        <canvas ref = {canvasRef} width = {800} height = {800} onMouseDown = {onMouseDown} onMouseUp = {onMouseUp} onMouseMove = {onMouseMove} className='canvas-board' id='canvas-board'>
 
         </canvas>
         <br/>

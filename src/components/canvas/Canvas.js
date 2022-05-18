@@ -2,6 +2,7 @@
 import React, {useState, useRef} from 'react';
 import { useCallback } from 'react';
 import { useEffect } from 'react';
+import io from 'socket.io'
 
 // import './style.css'
 //challenges: 1)one big componentdidupdate cycle  that also needs to capture the memoized data of the functions from the mouse movements?(usecallback) need the exact data of your mouse(drawing) and the other users mouse(sockets)
@@ -9,13 +10,14 @@ import { useEffect } from 'react';
 //interesting to think of how to place state on the mouse. whether to use the state or directly assign boolean value each time & transitioning that from single user to multiple (q: would that be affected)
 //similar to lisa had with the api for grace shopper, there was a rate limit, so had to consider a throttle so wont overload the connect, creating a time delay to space it out 
 
-// const colors = [
-//   'red',
-//   'black',
-//   'yellow',
-//   'blue',
-//   'green'
-// ]
+const colors = [
+  'red',
+  'black',
+  'yellow',
+  'blue',
+  'green'
+]
+
 const CanvasBoard = (props) => {
   const canvasRef = useRef(null)
   const ctx = useRef(null)
@@ -80,11 +82,7 @@ const CanvasBoard = (props) => {
     drawOnCanvas(evt.pageX,evt.pageY)
   }
 
-
-
-  
-
- 
+\
   
     return (
       <div>
@@ -92,7 +90,7 @@ const CanvasBoard = (props) => {
 
         </canvas>
         <br/>
-        {/* <select value={chosenColor} onChange={(evt) => setColor(evt.target.value)}> {colors.map(color => <option key = {color} value = {color}>{color}</option>)}</select> */}
+        {/* <select value={color} onChange={(evt) => setColor(evt.target.value)}> {colors.map(color => <option key = {color} value = {color}>{color}</option>)}</select> */}
 
      </div>
     )

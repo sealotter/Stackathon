@@ -1,0 +1,34 @@
+import React from 'react';
+import CanvasBoard from '../canvas/Canvas';
+
+
+
+class Container extends React.Component {
+  constructor(props) {
+    super(props)
+   
+  }
+
+
+
+  render(){
+
+    return(
+      <div className = 'container'>
+        <div className='color-picker-container'>
+          <input type='color' ></input>
+        </div>
+
+        <div className='canvas-container'>
+          <CanvasBoard />
+        </div>
+
+
+      
+      </div>
+    )
+  }
+}
+
+
+export default Container

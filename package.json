@@ -25,6 +25,7 @@
     "@babel/preset-react": "^7.16.7",
     "axios": "^0.27.2",
     "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
     "nodemon": "^2.0.16",
     "react": "^18.1.0",
     "react-dom": "^17.0.2",
@@ -33,6 +34,7 @@
     "redux": "^4.2.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
+    "style-loader": "^3.3.1",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2"
   }
